@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "@mui/material";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { PriceProvider } from "./context/PriceContext";
 import Header from "./components/Header";
 import PriceDisplay from "./components/PriceDisplay";
@@ -14,7 +14,7 @@ function App() {
 					<PriceDisplay />
 					<Header />
 					<Routes>
-						<Route path="/" element={<ChartComponent />} />
+						<Route path="/" element={<Navigate to="/chart" />} />
 						<Route path="/chart" element={<ChartComponent />} />
 						<Route path="/summary" />
 						<Route path="/statistics" />
