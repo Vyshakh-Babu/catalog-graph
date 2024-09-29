@@ -1,0 +1,25 @@
+.chartContainer {
+	margin-top: 32px;
+	background-color: white;
+}
+
+.tooltip {
+	position: absolute;
+	background-color: #4940e5;
+	color: #ffffff;
+	padding: 4px 8px;
+	border-radius: 4px;
+	white-space: nowrap;
+	font-size: 0.875rem;
+}
+
+.fullscreen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: white;
+	z-index: 9999;
+	padding: 20px;
+}

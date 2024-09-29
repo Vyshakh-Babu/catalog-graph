@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container } from "@mui/material";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { PriceProvider } from "./context/PriceContext";
+import Header from "./components/Header";
+import PriceDisplay from "./components/PriceDisplay";
+import ChartComponent from "./components/ChartComponent";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<PriceProvider>
+			<Router>
+				<Container maxWidth="lg" style={{ width: "65%", margin: "0 auto" }}>
+					<PriceDisplay />
+					<Header />
+					<Routes>
+						<Route path="/" element={<ChartComponent />} />
+						<Route path="/chart" element={<ChartComponent />} />
+						<Route path="/summary" />
+						<Route path="/statistics" />
+						<Route path="/analysis" />
+						<Route path="/settings" />
+					</Routes>
+				</Container>
+			</Router>
+		</PriceProvider>
+	);
 }
 
 export default App;
